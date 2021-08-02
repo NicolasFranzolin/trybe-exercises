@@ -1,21 +1,29 @@
 /* 3- Agora inverta o lado do triângulo. Por exemplo: */
 
-let n = 5;
+/* let n = 5;
 let input = "";
 let blankSpaces = "";
+ */
 
 
-
-for (let index = 0; index <= n ; index +=1) {
+/* for (let index = 0; index <= n ; index +=1) {
     console.log(input);
 
     input += blankSpaces + "*";    
 }
+ */
 
-let numeros = [1,2,3,10]
-let soma = 0;
+/* console.log("0000*")
+console.log("000**")
+console.log("00***")
+console.log("0****")
+console.log("*****") */
 
-for (let index = 0; index < numeros.length; index += 1) {
-    soma += numeros[index];
+let n = 5;
+let blankSpaces = "0";
+let symbol = "*";
 
-}console.log(soma)
+for (let index = n; index > 0; index -= 1) {
+    console.log("0","0");
+    blankSpaces -= 1;    
+}
