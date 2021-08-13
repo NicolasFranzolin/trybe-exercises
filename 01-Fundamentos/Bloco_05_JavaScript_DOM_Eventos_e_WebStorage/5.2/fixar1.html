@@ -74,12 +74,12 @@
 
         // Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
         for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
-      const currentChildren = pai.childNodes[index];
+      letcurrentChildren = pai.childNodes[index];
       if (currentChildren.id !== 'elementoOndeVoceEsta') {
         currentChildren.remove();
       }
     } 
-    const segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
+    let segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
     segundoEUltimoFilhoDoFilho.remove();
 
     console.log(pai)
