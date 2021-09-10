@@ -63,23 +63,27 @@ const books = [
   },
 ];
 
+// books.releaseYear - books.author.birthYear 
+// console.log(1928 - 1890)
+
 // Adicione o código do exercício aqui:
 
-// 2 - Retorne o nome do livro de menor nome.
-// Dica: use a função forEach .
+// 3 - Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
 
-function smallerName() {
-    let nameBook;
-    // escreva aqui o seu código
-    books.forEach((xablau) => {
-        if (!nameBook || xablau.name.length < nameBook.length) {
-            nameBook = xablau.name;
-        }
-    });
-  
-    // Variável nameBook que receberá o valor do menor nome;
-    return nameBook;
-  }
-  
-  console.log(smallerName());
-  assert.strictEqual(smallerName(), 'Duna');
+const expectedResult = 43;
+
+function averageAge() {
+  // escreva seu código aqui
+
+    const allAges = ((accumulator, element, index, array) => {
+      return accumulator + (element.releaseYear - element.author.birthYear);
+    })   
+    const avgAge = books.reduce(allAges, 0);
+
+    return avgAge / books.length;
+
+}
+
+console.log(averageAge());
+
+assert.strictEqual(averageAge(), expectedResult);

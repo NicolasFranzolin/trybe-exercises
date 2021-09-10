@@ -64,22 +64,31 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+// 4 - Encontre o livro com o maior nome.
 
-// 2 - Retorne o nome do livro de menor nome.
-// Dica: use a função forEach .
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
 
-function smallerName() {
-    let nameBook;
-    // escreva aqui o seu código
-    books.forEach((xablau) => {
-        if (!nameBook || xablau.name.length < nameBook.length) {
-            nameBook = xablau.name;
-        }
-    });
-  
-    // Variável nameBook que receberá o valor do menor nome;
-    return nameBook;
-  }
-  
-  console.log(smallerName());
-  assert.strictEqual(smallerName(), 'Duna');
+function longestNamedBook() {
+  // escreva seu código aqui
+  const unreal = ((accumulator, element, index, array) => {
+    if (element.name.length > accumulator.name.length) {
+      return element;
+    } else {
+      return accumulator;
+    }
+  }) 
+  const generateBook = books.reduce(unreal);
+  return generateBook;
+}
+console.log(longestNamedBook())
+
+assert.deepStrictEqual(longestNamedBook(), expectedResult);
